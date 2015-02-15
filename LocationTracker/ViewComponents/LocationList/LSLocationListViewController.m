@@ -35,6 +35,11 @@ static const CGFloat kDefaultCellHeight = 44.0;
     
     self.navigationItem.title = @"位置履歴";
     
+    UIBarButtonItem *trashItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(onPressTrashButton:)];
+    self.navigationItem.leftBarButtonItem = trashItem;
+    
+    UIBarButtonItem *actionItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(onPressActionButton:)];
+    self.navigationItem.rightBarButtonItem = actionItem;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -92,6 +97,15 @@ static const CGFloat kDefaultCellHeight = 44.0;
 
 #pragma mark - Publics
 #pragma mark - Privates
+
+- (void)reloadLocationData
+{
+    GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
+    self.locations = defaults.locationData;
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - Delegates
 #pragma mark UITableView
 
@@ -131,10 +145,55 @@ static const CGFloat kDefaultCellHeight = 44.0;
 
 - (void)didUpdateLocation:(NSNotification *)notification
 {
-    GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
-    self.locations = defaults.locationData;
+    [self reloadLocationData];
+}
+
+- (void)onPressTrashButton:(UIBarButtonItem *)item
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"位置履歴を全て削除しますか？"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
     
-    [self.tableView reloadData];
+    [alert addAction:[UIAlertAction actionWithTitle:@"キャンセル"
+                                              style:UIAlertActionStyleCancel
+                                            handler:nil]];
+    
+    [alert addAction:
+     [UIAlertAction actionWithTitle:@"削除する"
+                              style:UIAlertActionStyleDestructive
+                            handler:
+      ^(UIAlertAction *action) {
+          
+          GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
+          defaults.locationData = nil;
+          [self reloadLocationData];
+          
+      }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)onPressActionButton:(UIBarButtonItem *)item
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"データをエクスポート"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"キャンセル"
+                                              style:UIAlertActionStyleCancel
+                                            handler:nil]];
+    
+    [alert addAction:
+     [UIAlertAction actionWithTitle:@"メールで送信"
+                              style:UIAlertActionStyleDefault
+                            handler:
+      ^(UIAlertAction *action) {
+          
+          NSLog(@"メールで送るよ！");
+          
+      }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
