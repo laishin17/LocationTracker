@@ -104,8 +104,9 @@ NSString *const kLSLocationManagerNotificationInfoErrorKey = @"error";
     
     GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
     
-    NSArray *storedErrors = defaults.locationErrorDescriptions;
-    defaults.locationErrorDescriptions = [storedErrors arrayByAddingObject:error.description];
+    NSData *errorData = [NSKeyedArchiver archivedDataWithRootObject:error];
+    NSArray *storedErrors = defaults.locationErrorData;
+    defaults.locationErrorData = [storedErrors arrayByAddingObject:errorData];
     
     NSDictionary *userInfo = @{ kLSLocationManagerNotificationInfoErrorKey: error };
     [[NSNotificationCenter defaultCenter] postNotificationName:kLSLocationManagerDidFailNotification

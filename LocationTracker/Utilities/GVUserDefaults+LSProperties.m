@@ -17,7 +17,7 @@
 @dynamic desiredAccuracy;
 @dynamic trackingEnabled;
 @dynamic locationData;
-@dynamic locationErrorDescriptions;
+@dynamic locationErrorData;
 
 - (NSString *)transformKey:(NSString *)key
 {
@@ -32,7 +32,7 @@
               @"desiredAccuracy": @(kCLLocationAccuracyBestForNavigation),
               @"trackingEnabled": @YES,
               @"locationData": @[],
-              @"locationErrorDescriptions": @[] };
+              @"locationErrorData": @[] };
 }
 
 @end

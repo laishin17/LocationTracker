@@ -15,6 +15,6 @@
 @property (nonatomic) double desiredAccuracy;
 @property (nonatomic) BOOL trackingEnabled;
 @property (weak, nonatomic) NSArray *locationData;
-@property (weak, nonatomic) NSArray *locationErrorDescriptions;
+@property (weak, nonatomic) NSArray *locationErrorData;
 
 @end
