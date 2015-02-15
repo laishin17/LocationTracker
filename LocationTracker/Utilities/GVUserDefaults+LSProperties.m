@@ -28,7 +28,7 @@
 
 - (NSDictionary *)setupDefaults
 {
-    return @{ @"distanceFilter": @(kCLDistanceFilterNone),
+    return @{ @"distanceFilter": @(5.0),
               @"desiredAccuracy": @(kCLLocationAccuracyBestForNavigation),
               @"trackingEnabled": @YES,
               @"locationData": @[],
