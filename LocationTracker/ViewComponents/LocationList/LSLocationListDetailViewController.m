@@ -39,7 +39,6 @@
     self.longitudeCell.detailTextLabel.text = [NSString stringWithFormat:@"%.8f", self.location.coordinate.longitude];
     self.accuracyCell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", self.location.horizontalAccuracy];
     self.detailCell.textLabel.text = self.location.description;
-    self.detailCell.textLabel.numberOfLines = 0;
     
     MKPointAnnotation *annotation = [MKPointAnnotation new];
     annotation.coordinate = self.location.coordinate;
