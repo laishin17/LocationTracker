@@ -14,8 +14,11 @@
 #import "LSLocationExporter.h"
 #import "GVUserDefaults+LSProperties.h"
 
+#import "LSLocationListDetailViewController.h"
+
 
 static NSString *const kLocationCellId = @"locationCellId";
+static NSString *const kShowDetailViewSegueId = @"showDetailViewSegueId";
 static const CGFloat kDefaultCellHeight = 44.0;
 
 
@@ -164,16 +167,34 @@ static const CGFloat kDefaultCellHeight = 44.0;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:kShowDetailViewSegueId sender:self];
+}
+
 #pragma mark MFMailComposeViewControllerDelegate
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    NSLog(@"%u", result);
-    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Handlers
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:kShowDetailViewSegueId]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSInteger index = self.locations.count - indexPath.row - 1;
+        NSData *locationData = self.locations[index];
+        CLLocation *location = [NSKeyedUnarchiver unarchiveObjectWithData:locationData];
+        
+        LSLocationListDetailViewController *vc = segue.destinationViewController;
+        vc.location = location;
+        
+    }
+}
 
 - (void)didUpdateLocation:(NSNotification *)notification
 {
