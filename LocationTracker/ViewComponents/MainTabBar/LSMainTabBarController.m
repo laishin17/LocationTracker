@@ -15,6 +15,25 @@
 
 @implementation LSMainTabBarController
 
++ (instancetype)tabBarController
+{
+    LSMainTabBarController *vc = [self new];
+    
+    UIStoryboard *listSB = [UIStoryboard storyboardWithName:@"LSLocationListStoryboard"
+                                                     bundle:nil];
+    UIViewController *listVC = [listSB instantiateInitialViewController];
+    listVC.tabBarItem.title = @"位置履歴";
+    
+    UIStoryboard *settingsSB = [UIStoryboard storyboardWithName:@"LSSettingsStoryboard"
+                                                         bundle:nil];
+    UIViewController *settingsVC = [settingsSB instantiateInitialViewController];
+    settingsVC.tabBarItem.title = @"設定";
+    
+    vc.viewControllers = @[listVC, settingsVC];
+    
+    return vc;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

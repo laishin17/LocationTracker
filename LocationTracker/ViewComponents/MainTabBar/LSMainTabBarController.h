@@ -11,6 +11,6 @@
 
 @interface LSMainTabBarController : UITabBarController
 
-+ (instancetype)batBarController;
++ (instancetype)tabBarController;
 
 @end
