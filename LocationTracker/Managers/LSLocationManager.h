@@ -13,6 +13,7 @@ extern NSString *const kLSLocationManagerErrorDomain;
 extern NSString *const kLSLocationManagerDidFailNotification;
 extern NSString *const kLSLocationManagerDidUpdateNotification;
 extern NSString *const kLSLocationManagerNotificationInfoErrorKey;
+extern NSString *const kLSLocationManagerErrorInfoTimestampKey;
 
 
 @interface LSLocationManager : NSObject

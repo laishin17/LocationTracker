@@ -25,7 +25,7 @@
     
     UIStoryboard *errorsSB = [UIStoryboard storyboardWithName:@"LSErrorListStoryboard" bundle:nil];
     UIViewController *errorsVC = [errorsSB instantiateInitialViewController];
-    errorsVC.tabBarItem.title = @"エラー";
+    errorsVC.tabBarItem.title = @"エラー履歴";
     
     UIStoryboard *settingsSB = [UIStoryboard storyboardWithName:@"LSSettingsStoryboard" bundle:nil];
     UIViewController *settingsVC = [settingsSB instantiateInitialViewController];
