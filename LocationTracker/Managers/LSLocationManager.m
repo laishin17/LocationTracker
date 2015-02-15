@@ -16,6 +16,7 @@ NSString *const kLSLocationManagerErrorDomain = @"net.laishin.ios.LocationTracke
 NSString *const kLSLocationManagerDidFailNotification = @"net.laishin.ios.LocationTracker:kLSLocationManagerDidFailNotification";
 NSString *const kLSLocationManagerDidUpdateNotification = @"net.laishin.ios.LocationTracker:kLSLocationManagerDidUpdateNotification";
 NSString *const kLSLocationManagerNotificationInfoErrorKey = @"error";
+NSString *const kLSLocationManagerErrorInfoTimestampKey = @"timestamp";
 
 
 @interface LSLocationManager () <CLLocationManagerDelegate>
@@ -96,22 +97,28 @@ NSString *const kLSLocationManagerNotificationInfoErrorKey = @"error";
 
 #pragma mark - Privates
 
-- (void)storeErorrAndNotify:(NSError *)error
+- (void)storeErorrAndNotify:(NSError *)rawError
 {
-    if (error == nil) return;
+    if (rawError == nil) return;
     
-    NSLog(@"%@", error);
+    NSLog(@"%@", rawError);
     
     GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
+    
+    NSMutableDictionary *errorInfo = rawError.userInfo.mutableCopy;
+    errorInfo[kLSLocationManagerErrorInfoTimestampKey] = [NSDate date];
+    NSError *error = [NSError errorWithDomain:rawError.domain
+                                         code:rawError.code
+                                     userInfo:errorInfo];
     
     NSData *errorData = [NSKeyedArchiver archivedDataWithRootObject:error];
     NSArray *storedErrors = defaults.locationErrorData;
     defaults.locationErrorData = [storedErrors arrayByAddingObject:errorData];
     
-    NSDictionary *userInfo = @{ kLSLocationManagerNotificationInfoErrorKey: error };
+    NSDictionary *notificationInfo = @{ kLSLocationManagerNotificationInfoErrorKey: error };
     [[NSNotificationCenter defaultCenter] postNotificationName:kLSLocationManagerDidFailNotification
                                                         object:self
-                                                      userInfo:userInfo];
+                                                      userInfo:notificationInfo];
 }
 
 #pragma mark - Delegates
