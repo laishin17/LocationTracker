@@ -83,7 +83,7 @@
         <scene sceneID="AxA-o2-Okz">
             <objects>
                 <tableViewController id="h2a-Ad-xp9" customClass="LSSettingsAccuracyViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="m7W-q7-uIq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="m7W-q7-uIq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -123,27 +123,57 @@
             </objects>
             <point key="canvasLocation" x="1240" y="549"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Settings Distance Filter View Controller-->
         <scene sceneID="JxL-Yo-gGc">
             <objects>
-                <tableViewController id="NZ9-av-iOz" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fla-8M-x68">
+                <tableViewController id="NZ9-av-iOz" customClass="LSSettingsDistanceFilterViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="fla-8M-x68">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qbB-uJ-vVi">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qbB-uJ-vVi" id="kaZ-6I-WGC">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection footerTitle="ここで設定した距離を移動するごとに、位置情報を取得します。" id="G90-PH-3E5">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="qbB-uJ-vVi">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qbB-uJ-vVi" id="kaZ-6I-WGC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meters" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKF-yM-Xyc">
+                                                    <rect key="frame" x="0.0" y="0.0" width="585" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etv-VB-3p1">
+                                                    <rect key="frame" x="15" y="0.0" width="585" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LKF-yM-Xyc" firstAttribute="top" secondItem="kaZ-6I-WGC" secondAttribute="top" id="6s0-Oz-1lH"/>
+                                                <constraint firstItem="etv-VB-3p1" firstAttribute="leading" secondItem="kaZ-6I-WGC" secondAttribute="leading" constant="15" id="F3S-RR-LYG"/>
+                                                <constraint firstItem="etv-VB-3p1" firstAttribute="top" secondItem="kaZ-6I-WGC" secondAttribute="top" id="OcL-pv-Bgc"/>
+                                                <constraint firstAttribute="bottom" secondItem="LKF-yM-Xyc" secondAttribute="bottom" id="Un5-Kp-Z1T"/>
+                                                <constraint firstAttribute="trailing" secondItem="LKF-yM-Xyc" secondAttribute="trailing" constant="15" id="VHF-9U-y6P"/>
+                                                <constraint firstAttribute="trailing" secondItem="etv-VB-3p1" secondAttribute="trailing" id="kRr-r9-XIJ"/>
+                                                <constraint firstItem="LKF-yM-Xyc" firstAttribute="leading" secondItem="kaZ-6I-WGC" secondAttribute="leading" id="n1X-6c-i9S"/>
+                                                <constraint firstAttribute="bottom" secondItem="etv-VB-3p1" secondAttribute="bottom" id="pNk-Fx-rA9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="NZ9-av-iOz" id="YnG-9k-qMS"/>
                             <outlet property="delegate" destination="NZ9-av-iOz" id="Fq7-dy-Y0r"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="distanceTextField" destination="etv-VB-3p1" id="qf6-Uj-WXk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZX-Xg-XMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
