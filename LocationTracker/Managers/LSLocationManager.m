@@ -93,6 +93,22 @@ NSString *const kLSLocationManagerNotificationInfoErrorKey = @"error";
 }
 
 #pragma mark - Privates
+
+- (void)storeErorrAndNotify:(NSError *)error
+{
+    if (error == nil) return;
+    
+    GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
+    
+    NSArray *storedErrors = defaults.locationErrors;
+    defaults.locationErrors = [storedErrors arrayByAddingObject:error];
+    
+    NSDictionary *userInfo = @{ kLSLocationManagerNotificationInfoErrorKey: error };
+    [[NSNotificationCenter defaultCenter] postNotificationName:kLSLocationManagerDidFailNotification
+                                                        object:self
+                                                      userInfo:userInfo];
+}
+
 #pragma mark - Delegates
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
@@ -107,7 +123,7 @@ NSString *const kLSLocationManagerNotificationInfoErrorKey = @"error";
     CLLocation *location = locations.lastObject;
     if (location == nil) return;
     NSLog(@"\n%@\n", location);
- 
+    
     GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
     
     NSArray *storedLocations = defaults.locations;
@@ -119,18 +135,12 @@ NSString *const kLSLocationManagerNotificationInfoErrorKey = @"error";
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    NSDictionary *userInfo = @{ kLSLocationManagerNotificationInfoErrorKey: error };
-    [[NSNotificationCenter defaultCenter] postNotificationName:kLSLocationManagerDidFailNotification
-                                                        object:self
-                                                      userInfo:userInfo];
+    [self storeErorrAndNotify:error];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFinishDeferredUpdatesWithError:(NSError *)error
 {
-    NSDictionary *userInfo = @{ kLSLocationManagerNotificationInfoErrorKey: error };
-    [[NSNotificationCenter defaultCenter] postNotificationName:kLSLocationManagerDidFailNotification
-                                                        object:self
-                                                      userInfo:userInfo];
+    [self storeErorrAndNotify:error];
 }
 
 #pragma mark - Handlers
