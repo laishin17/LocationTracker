@@ -104,6 +104,16 @@ NSString *const kLSLocationManagerErrorInfoTimestampKey = @"timestamp";
     return nil;
 }
 
+- (void)setDesiredAccuracy:(CLLocationAccuracy)accuracy
+{
+    self.locationManager.desiredAccuracy = accuracy;
+}
+
+- (void)setDistanceFilter:(CLLocationDistance)distance
+{
+    self.locationManager.distanceFilter = distance;
+}
+
 - (NSString *)stringFromAccuracy:(CLLocationAccuracy)accuracy
 {
     if (accuracy == kCLLocationAccuracyBestForNavigation) {

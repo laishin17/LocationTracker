@@ -27,6 +27,8 @@ extern NSString *const kLSLocationManagerErrorInfoTimestampKey;
 + (instancetype)sharedManager;
 - (NSError *)startUpdatingLocation;
 
+- (void)setDesiredAccuracy:(CLLocationAccuracy)accuracy;
+- (void)setDistanceFilter:(CLLocationDistance)distance;
 - (NSString *)stringFromAccuracy:(CLLocationAccuracy)accuracy;
 
 @end

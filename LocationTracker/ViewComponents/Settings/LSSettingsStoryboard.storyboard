@@ -79,27 +79,45 @@
             </objects>
             <point key="canvasLocation" x="504" y="549"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Settings Accuracy View Controller-->
         <scene sceneID="AxA-o2-Okz">
             <objects>
-                <tableViewController id="h2a-Ad-xp9" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="m7W-q7-uIq">
+                <tableViewController id="h2a-Ad-xp9" customClass="LSSettingsAccuracyViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="m7W-q7-uIq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kXG-dM-sff">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kXG-dM-sff" id="sdJ-mW-bMf">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection footerTitle="精度が高いほどバッテリー消費が激しくなります。" id="MEG-0S-61U">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="162" id="kXG-dM-sff">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kXG-dM-sff" id="sdJ-mW-bMf">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f29-JB-4aB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="162"/>
+                                                </pickerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="f29-JB-4aB" secondAttribute="trailing" id="8RH-99-PbO"/>
+                                                <constraint firstAttribute="bottom" secondItem="f29-JB-4aB" secondAttribute="bottom" id="AiJ-yN-dYl"/>
+                                                <constraint firstItem="f29-JB-4aB" firstAttribute="leading" secondItem="sdJ-mW-bMf" secondAttribute="leading" id="BKK-H7-wy0"/>
+                                                <constraint firstItem="f29-JB-4aB" firstAttribute="top" secondItem="sdJ-mW-bMf" secondAttribute="top" id="oi6-QR-VpA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="h2a-Ad-xp9" id="XJg-0Y-aaS"/>
                             <outlet property="delegate" destination="h2a-Ad-xp9" id="IUO-qh-ebS"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="accuracyPickerView" destination="f29-JB-4aB" id="l4x-sy-Lci"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ac4-RP-1do" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
