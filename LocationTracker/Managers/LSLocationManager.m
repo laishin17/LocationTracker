@@ -126,7 +126,7 @@ NSString *const kLSLocationManagerNotificationInfoErrorKey = @"error";
 {
     CLLocation *location = locations.lastObject;
     if (location == nil) return;
-    NSLog(@"\n%@\n", location);
+    //NSLog(@"\n%@\n", location);
     
     GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
     

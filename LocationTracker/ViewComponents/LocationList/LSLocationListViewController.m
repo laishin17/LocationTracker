@@ -8,8 +8,10 @@
 
 #import "LSLocationListViewController.h"
 
+#import <MessageUI/MessageUI.h>
 #import <CoreLocation/CoreLocation.h>
 #import "LSLocationManager.h"
+#import "LSLocationExporter.h"
 #import "GVUserDefaults+LSProperties.h"
 
 
@@ -17,7 +19,7 @@ static NSString *const kLocationCellId = @"locationCellId";
 static const CGFloat kDefaultCellHeight = 44.0;
 
 
-@interface LSLocationListViewController ()
+@interface LSLocationListViewController () <MFMailComposeViewControllerDelegate>
 
 @property (nonatomic) NSArray *locations;
 @property (nonatomic) NSDateFormatter *dateFormatter;
@@ -106,6 +108,27 @@ static const CGFloat kDefaultCellHeight = 44.0;
     [self.tableView reloadData];
 }
 
+- (void)sendMail
+{
+    NSDate *now = [NSDate date];
+    
+    NSString *title = [NSString stringWithFormat:@"Location Tracker"];
+    NSString *message = [NSString stringWithFormat:@"Exported at: %@", now];
+    
+    MFMailComposeViewController *vc = [MFMailComposeViewController new];
+    vc.mailComposeDelegate = self;
+    [vc setSubject:title];
+    [vc setMessageBody:message isHTML:NO];
+    
+    LSLocationExporter *exporter = [LSLocationExporter new];
+    NSString *csvLocations = [exporter exportToCSV];
+    NSData *data = [csvLocations dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *fileName = [NSString stringWithFormat:@"locations_%f.csv", [now timeIntervalSince1970]];
+    [vc addAttachmentData:data mimeType:@"text/csv" fileName:fileName];
+    
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 #pragma mark - Delegates
 #pragma mark UITableView
 
@@ -139,6 +162,15 @@ static const CGFloat kDefaultCellHeight = 44.0;
     cell.textLabel.text = [self.dateFormatter stringFromDate:location.timestamp];
     
     return cell;
+}
+
+#pragma mark MFMailComposeViewControllerDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    NSLog(@"%u", result);
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Handlers
@@ -189,7 +221,7 @@ static const CGFloat kDefaultCellHeight = 44.0;
                             handler:
       ^(UIAlertAction *action) {
           
-          NSLog(@"メールで送るよ！");
+          [self sendMail];
           
       }]];
     
