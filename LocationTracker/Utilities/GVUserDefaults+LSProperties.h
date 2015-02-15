@@ -14,7 +14,7 @@
 @property (nonatomic) double distanceFilter;
 @property (nonatomic) double desiredAccuracy;
 @property (nonatomic) BOOL trackingEnabled;
-@property (weak, nonatomic) NSArray *locations;
-@property (weak, nonatomic) NSArray *locationErrors;
+@property (weak, nonatomic) NSArray *locationData;
+@property (weak, nonatomic) NSArray *locationErrorDescriptions;
 
 @end

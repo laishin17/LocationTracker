@@ -14,7 +14,7 @@
 
 
 static NSString *const kLocationCellId = @"locationCellId";
-static const CGFloat kDefaultCellHeight = 50.0;
+static const CGFloat kDefaultCellHeight = 44.0;
 
 
 @interface LSLocationListViewController ()
@@ -38,7 +38,7 @@ static const CGFloat kDefaultCellHeight = 50.0;
     [super viewWillAppear:animated];
     
     GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
-    self.locations = defaults.locations;
+    self.locations = defaults.locationData;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didUpdateLocation:)
@@ -100,9 +100,11 @@ static const CGFloat kDefaultCellHeight = 50.0;
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kLocationCellId forIndexPath:indexPath];
     
-    CLLocation *location = self.locations[indexPath.row];
-    cell.textLabel.text = location.description;
-    cell.detailTextLabel.text = location.timestamp.description;
+    NSInteger index = self.locations.count - indexPath.row - 1;
+    NSData *locationData = self.locations[index];
+    CLLocation *location = [NSKeyedUnarchiver unarchiveObjectWithData:locationData];
+    cell.textLabel.text = location.timestamp.description;
+    cell.detailTextLabel.text = location.description;
     
     return cell;
 }
@@ -112,7 +114,7 @@ static const CGFloat kDefaultCellHeight = 50.0;
 - (void)didUpdateLocation:(NSNotification *)notification
 {
     GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
-    self.locations = defaults.locations;
+    self.locations = defaults.locationData;
     
     [self.tableView reloadData];
 }

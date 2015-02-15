@@ -16,8 +16,8 @@
 @dynamic distanceFilter;
 @dynamic desiredAccuracy;
 @dynamic trackingEnabled;
-@dynamic locations;
-@dynamic locationErrors;
+@dynamic locationData;
+@dynamic locationErrorDescriptions;
 
 - (NSString *)transformKey:(NSString *)key
 {
@@ -31,8 +31,8 @@
     return @{ @"distanceFilter": @(kCLDistanceFilterNone),
               @"desiredAccuracy": @(kCLLocationAccuracyBestForNavigation),
               @"trackingEnabled": @YES,
-              @"locations": @[],
-              @"locationErrors": @[] };
+              @"locationData": @[],
+              @"locationErrorDescriptions": @[] };
 }
 
 @end

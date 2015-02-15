@@ -52,6 +52,8 @@ NSString *const kLSLocationManagerNotificationInfoErrorKey = @"error";
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = defaults.desiredAccuracy;
     self.locationManager.distanceFilter = defaults.distanceFilter;
+    self.locationManager.activityType = CLActivityTypeFitness;
+    self.locationManager.pausesLocationUpdatesAutomatically = NO;
     
     return self;
 }
@@ -98,10 +100,12 @@ NSString *const kLSLocationManagerNotificationInfoErrorKey = @"error";
 {
     if (error == nil) return;
     
+    NSLog(@"%@", error);
+    
     GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
     
-    NSArray *storedErrors = defaults.locationErrors;
-    defaults.locationErrors = [storedErrors arrayByAddingObject:error];
+    NSArray *storedErrors = defaults.locationErrorDescriptions;
+    defaults.locationErrorDescriptions = [storedErrors arrayByAddingObject:error.description];
     
     NSDictionary *userInfo = @{ kLSLocationManagerNotificationInfoErrorKey: error };
     [[NSNotificationCenter defaultCenter] postNotificationName:kLSLocationManagerDidFailNotification
@@ -126,8 +130,9 @@ NSString *const kLSLocationManagerNotificationInfoErrorKey = @"error";
     
     GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
     
-    NSArray *storedLocations = defaults.locations;
-    defaults.locations = [storedLocations arrayByAddingObject:location];
+    NSData *locationData = [NSKeyedArchiver archivedDataWithRootObject:location];
+    NSArray *storedLocations = defaults.locationData;
+    defaults.locationData = [storedLocations arrayByAddingObject:locationData];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kLSLocationManagerDidUpdateNotification
                                                         object:self];

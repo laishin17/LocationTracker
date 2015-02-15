@@ -20,6 +20,7 @@
 		01D74E891A905C19007D471D /* LSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D74E881A905C19007D471D /* LSLocationManager.m */; };
 		01D9CEBC1A90629200147173 /* LSErrorListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D9CEBB1A90629200147173 /* LSErrorListStoryboard.storyboard */; };
 		01D9CEBF1A90636E00147173 /* LSLocationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CEBE1A90636E00147173 /* LSLocationListViewController.m */; };
+		01D9CEC21A90693900147173 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01D9CEC11A90693900147173 /* InfoPlist.strings */; };
 		0650D01BEB8190EBD765C640 /* libPods-LocationTrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C864A286405FAD191D3D56A /* libPods-LocationTrackerTests.a */; };
 		D25CE3F94AF8E2469379BBCF /* libPods-LocationTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2284BA8EEE06EA4D890083 /* libPods-LocationTracker.a */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		01D9CEBB1A90629200147173 /* LSErrorListStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LSErrorListStoryboard.storyboard; path = ViewComponents/ErrorList/LSErrorListStoryboard.storyboard; sourceTree = "<group>"; };
 		01D9CEBD1A90636E00147173 /* LSLocationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSLocationListViewController.h; path = ViewComponents/LocationList/LSLocationListViewController.h; sourceTree = "<group>"; };
 		01D9CEBE1A90636E00147173 /* LSLocationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSLocationListViewController.m; path = ViewComponents/LocationList/LSLocationListViewController.m; sourceTree = "<group>"; };
+		01D9CEC11A90693900147173 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = Locales/InfoPlist.strings; sourceTree = "<group>"; };
 		1C32D9AACC1CE6E2287EFE68 /* Pods-LocationTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTrackerTests/Pods-LocationTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C2284BA8EEE06EA4D890083 /* libPods-LocationTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C864A286405FAD191D3D56A /* libPods-LocationTrackerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationTrackerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 		01D74E4C1A9055F9007D471D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				01D9CEC01A90692000147173 /* Locales */,
 				01D74E4D1A9055F9007D471D /* Info.plist */,
 				01D74E4E1A9055F9007D471D /* main.m */,
 			);
@@ -211,6 +214,14 @@
 			name = ErrorList;
 			sourceTree = "<group>";
 		};
+		01D9CEC01A90692000147173 /* Locales */ = {
+			isa = PBXGroup;
+			children = (
+				01D9CEC11A90693900147173 /* InfoPlist.strings */,
+			);
+			name = Locales;
+			sourceTree = "<group>";
+		};
 		77A133644CC9CD03DD294C7B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +296,11 @@
 				TargetAttributes = {
 					01D74E481A9055F9007D471D = {
 						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					01D74E641A9055F9007D471D = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -317,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01D74E7F1A90582D007D471D /* LSLocationListStoryboard.storyboard in Resources */,
+				01D9CEC21A90693900147173 /* InfoPlist.strings in Resources */,
 				01D74E601A9055F9007D471D /* LaunchScreen.xib in Resources */,
 				01D9CEBC1A90629200147173 /* LSErrorListStoryboard.storyboard in Resources */,
 				01D74E5D1A9055F9007D471D /* Images.xcassets in Resources */,

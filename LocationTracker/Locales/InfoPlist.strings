@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  LocationTracker
+
+  Created by laishin on 2015/02/15.
+  Copyright (c) 2015年 laishin17. All rights reserved.
+*/
+
+CFBundleDisplayName = "Tracker";
+NSLocationUsageDescription = "Location Tracker は、位置情報を収集します。";
+NSLocationAlwaysUsageDescription = "Location Tracker は、バックグラウンドでも位置情報を収集します。";
