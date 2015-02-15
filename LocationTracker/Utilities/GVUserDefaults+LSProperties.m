@@ -8,6 +8,8 @@
 
 #import "GVUserDefaults+LSProperties.h"
 
+#import <CoreLocation/CoreLocation.h>
+
 
 @implementation GVUserDefaults (LSProperties)
 
@@ -25,8 +27,8 @@
 
 - (NSDictionary *)setupDefaults
 {
-    return @{ @"distanceFilter": @(5.0),
-              @"desiredAccuracy": @(5.0),
+    return @{ @"distanceFilter": @(kCLDistanceFilterNone),
+              @"desiredAccuracy": @(kCLLocationAccuracyBestForNavigation),
               @"trackingEnabled": @YES,
               @"locations": @[] };
 }
