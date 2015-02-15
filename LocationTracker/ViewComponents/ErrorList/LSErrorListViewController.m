@@ -124,7 +124,26 @@ static NSString *const kErrorCellId = @"errorCellId";
 
 - (void)onPressTrashButton:(UIBarButtonItem *)item
 {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"位置履歴を全て削除しますか？"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
     
+    [alert addAction:[UIAlertAction actionWithTitle:@"キャンセル"
+                                              style:UIAlertActionStyleCancel
+                                            handler:nil]];
+    
+    [alert addAction: [UIAlertAction actionWithTitle:@"削除する"
+                                               style:UIAlertActionStyleDestructive
+                                             handler:
+                       ^(UIAlertAction *action) {
+                           
+                           GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
+                           defaults.locationErrorData = nil;
+                           [self reloadErrorData];
+                           
+                       }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
