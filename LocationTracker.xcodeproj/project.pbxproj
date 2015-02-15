@@ -26,6 +26,7 @@
 		01D9CECD1A9088A800147173 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D9CECC1A9088A800147173 /* MapKit.framework */; };
 		01D9CED31A908E5D00147173 /* LSErrorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CED21A908E5D00147173 /* LSErrorListViewController.m */; };
 		01D9CED61A9090F400147173 /* LSErrorListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CED51A9090F400147173 /* LSErrorListDetailViewController.m */; };
+		01D9CED91A90936E00147173 /* LSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CED81A90936E00147173 /* LSSettingsViewController.m */; };
 		0650D01BEB8190EBD765C640 /* libPods-LocationTrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C864A286405FAD191D3D56A /* libPods-LocationTrackerTests.a */; };
 		D25CE3F94AF8E2469379BBCF /* libPods-LocationTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2284BA8EEE06EA4D890083 /* libPods-LocationTracker.a */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,8 @@
 		01D9CED21A908E5D00147173 /* LSErrorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSErrorListViewController.m; path = ViewComponents/ErrorList/LSErrorListViewController.m; sourceTree = "<group>"; };
 		01D9CED41A9090F400147173 /* LSErrorListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSErrorListDetailViewController.h; path = ViewComponents/ErrorList/LSErrorListDetailViewController.h; sourceTree = "<group>"; };
 		01D9CED51A9090F400147173 /* LSErrorListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSErrorListDetailViewController.m; path = ViewComponents/ErrorList/LSErrorListDetailViewController.m; sourceTree = "<group>"; };
+		01D9CED71A90936E00147173 /* LSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSSettingsViewController.h; path = ViewComponents/Settings/LSSettingsViewController.h; sourceTree = "<group>"; };
+		01D9CED81A90936E00147173 /* LSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSSettingsViewController.m; path = ViewComponents/Settings/LSSettingsViewController.m; sourceTree = "<group>"; };
 		1C32D9AACC1CE6E2287EFE68 /* Pods-LocationTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTrackerTests/Pods-LocationTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C2284BA8EEE06EA4D890083 /* libPods-LocationTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C864A286405FAD191D3D56A /* libPods-LocationTrackerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationTrackerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				01D74E801A905844007D471D /* LSSettingsStoryboard.storyboard */,
+				01D9CED71A90936E00147173 /* LSSettingsViewController.h */,
+				01D9CED81A90936E00147173 /* LSSettingsViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01D9CEBF1A90636E00147173 /* LSLocationListViewController.m in Sources */,
+				01D9CED91A90936E00147173 /* LSSettingsViewController.m in Sources */,
 				01D9CED31A908E5D00147173 /* LSErrorListViewController.m in Sources */,
 				01D74E521A9055F9007D471D /* AppDelegate.m in Sources */,
 				01D9CED61A9090F400147173 /* LSErrorListDetailViewController.m in Sources */,

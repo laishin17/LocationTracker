@@ -8,7 +8,6 @@
 
 #import "LSLocationManager.h"
 
-#import <CoreLocation/CoreLocation.h>
 #import "GVUserDefaults+LSProperties.h"
 
 
@@ -73,6 +72,16 @@ NSString *const kLSLocationManagerErrorInfoTimestampKey = @"timestamp";
             status == kCLAuthorizationStatusAuthorizedWhenInUse);
 }
 
+- (NSArray *)availableAccuracies
+{
+    return @[ @(kCLLocationAccuracyBestForNavigation),
+              @(kCLLocationAccuracyBest),
+              @(kCLLocationAccuracyNearestTenMeters),
+              @(kCLLocationAccuracyHundredMeters),
+              @(kCLLocationAccuracyKilometer),
+              @(kCLLocationAccuracyThreeKilometers) ];
+}
+
 #pragma mark - Publics
 
 - (NSError *)startUpdatingLocation
@@ -93,6 +102,25 @@ NSString *const kLSLocationManagerErrorInfoTimestampKey = @"timestamp";
     }
     
     return nil;
+}
+
+- (NSString *)stringFromAccuracy:(CLLocationAccuracy)accuracy
+{
+    if (accuracy == kCLLocationAccuracyBestForNavigation) {
+        return @"BestForNavigation";
+    } else if (accuracy == kCLLocationAccuracyBest) {
+        return @"Best";
+    } else if (accuracy == kCLLocationAccuracyNearestTenMeters) {
+        return @"NearestTenMeters";
+    } else if (accuracy == kCLLocationAccuracyHundredMeters) {
+        return @"HundredMeters";
+    } else if (accuracy == kCLLocationAccuracyKilometer) {
+        return @"Kilometer";
+    } else if (accuracy == kCLLocationAccuracyThreeKilometers) {
+        return @"ThreeKilometers";
+    }
+    
+    return @"-";
 }
 
 #pragma mark - Privates

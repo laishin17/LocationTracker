@@ -19,6 +19,7 @@
 @dynamic locationData;
 @dynamic locationErrorData;
 
+
 - (NSString *)transformKey:(NSString *)key
 {
     key = [key stringByReplacingCharactersInRange:NSMakeRange(0,1)
@@ -34,5 +35,7 @@
               @"locationData": @[],
               @"locationErrorData": @[] };
 }
+
+
 
 @end

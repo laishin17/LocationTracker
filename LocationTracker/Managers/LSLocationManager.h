@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import <CoreLocation/CoreLocation.h>
+
 
 extern NSString *const kLSLocationManagerErrorDomain;
 extern NSString *const kLSLocationManagerDidFailNotification;
@@ -20,8 +22,11 @@ extern NSString *const kLSLocationManagerErrorInfoTimestampKey;
 
 @property (nonatomic, readonly) BOOL enabled;
 @property (nonatomic, readonly) BOOL authorized;
+@property (nonatomic, readonly) NSArray *availableAccuracies;
 
 + (instancetype)sharedManager;
 - (NSError *)startUpdatingLocation;
+
+- (NSString *)stringFromAccuracy:(CLLocationAccuracy)accuracy;
 
 @end
