@@ -190,17 +190,16 @@ static const CGFloat kDefaultCellHeight = 44.0;
                                               style:UIAlertActionStyleCancel
                                             handler:nil]];
     
-    [alert addAction:
-     [UIAlertAction actionWithTitle:@"削除する"
-                              style:UIAlertActionStyleDestructive
-                            handler:
-      ^(UIAlertAction *action) {
-          
-          GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
-          defaults.locationData = nil;
-          [self reloadLocationData];
-          
-      }]];
+    [alert addAction: [UIAlertAction actionWithTitle:@"削除する"
+                                               style:UIAlertActionStyleDestructive
+                                             handler:
+                       ^(UIAlertAction *action) {
+                           
+                           GVUserDefaults *defaults = [GVUserDefaults standardUserDefaults];
+                           defaults.locationData = nil;
+                           [self reloadLocationData];
+                           
+                       }]];
     
     [self presentViewController:alert animated:YES completion:nil];
 }
@@ -215,15 +214,14 @@ static const CGFloat kDefaultCellHeight = 44.0;
                                               style:UIAlertActionStyleCancel
                                             handler:nil]];
     
-    [alert addAction:
-     [UIAlertAction actionWithTitle:@"メールで送信"
-                              style:UIAlertActionStyleDefault
-                            handler:
-      ^(UIAlertAction *action) {
-          
-          [self sendMail];
-          
-      }]];
+    [alert addAction: [UIAlertAction actionWithTitle:@"メールで送信"
+                                               style:UIAlertActionStyleDefault
+                                             handler:
+                       ^(UIAlertAction *action) {
+                           
+                           [self sendMail];
+                           
+                       }]];
     
     [self presentViewController:alert animated:YES completion:nil];
 }
