@@ -11,8 +11,11 @@
 #import "GVUserDefaults+LSProperties.h"
 #import "LSLocationManager.h"
 
+#import "LSErrorListDetailViewController.h"
+
 
 static NSString *const kErrorCellId = @"errorCellId";
+static NSString *const kShowDetailViewSegueId = @"showDetailViewSegueId";
 
 
 @interface LSErrorListViewController ()
@@ -115,7 +118,26 @@ static NSString *const kErrorCellId = @"errorCellId";
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:kShowDetailViewSegueId sender:self];
+}
+
 #pragma mark - Handlers
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:kShowDetailViewSegueId]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSInteger index = self.errors.count - indexPath.row - 1;
+        NSData *errorData = self.errors[index];
+        NSError *error = [NSKeyedUnarchiver unarchiveObjectWithData:errorData];
+        
+        LSErrorListDetailViewController *vc = segue.destinationViewController;
+        vc.error = error;
+    }
+}
 
 - (void)didFailUpdatingLocation:(NSNotification *)notification
 {
