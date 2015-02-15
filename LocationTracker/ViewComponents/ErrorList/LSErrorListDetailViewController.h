@@ -1,5 +1,5 @@
 //
-//  LSMainTabBarController.h
+//  LSErrorListDetailViewController.h
 //  LocationTracker
 //
 //  Created by laishin on 2015/02/15.
@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@interface LSErrorListDetailViewController : UITableViewController
 
-@interface LSMainTabBarController : UITabBarController
-
-+ (instancetype)tabBarController;
+@property (nonatomic) NSError *error;
 
 @end

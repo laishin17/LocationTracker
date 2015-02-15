@@ -1,5 +1,5 @@
 //
-//  LSMainTabBarController.h
+//  LSLocationListViewController.h
 //  LocationTracker
 //
 //  Created by laishin on 2015/02/15.
@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface LSMainTabBarController : UITabBarController
-
-+ (instancetype)tabBarController;
+@interface LSLocationListViewController : UITableViewController
 
 @end

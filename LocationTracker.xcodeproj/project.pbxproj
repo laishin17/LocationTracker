@@ -13,6 +13,24 @@
 		01D74E601A9055F9007D471D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01D74E5E1A9055F9007D471D /* LaunchScreen.xib */; };
 		01D74E6C1A9055F9007D471D /* LocationTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D74E6B1A9055F9007D471D /* LocationTrackerTests.m */; };
 		01D74E7B1A9056D7007D471D /* LSMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D74E7A1A9056D7007D471D /* LSMainTabBarController.m */; };
+		01D74E7F1A90582D007D471D /* LSLocationListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D74E7E1A90582D007D471D /* LSLocationListStoryboard.storyboard */; };
+		01D74E811A905844007D471D /* LSSettingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D74E801A905844007D471D /* LSSettingsStoryboard.storyboard */; };
+		01D74E841A905981007D471D /* GVUserDefaults+LSProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D74E831A905981007D471D /* GVUserDefaults+LSProperties.m */; };
+		01D74E861A905B91007D471D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D74E851A905B91007D471D /* CoreLocation.framework */; };
+		01D74E891A905C19007D471D /* LSLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D74E881A905C19007D471D /* LSLocationManager.m */; };
+		01D9CEBC1A90629200147173 /* LSErrorListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D9CEBB1A90629200147173 /* LSErrorListStoryboard.storyboard */; };
+		01D9CEBF1A90636E00147173 /* LSLocationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CEBE1A90636E00147173 /* LSLocationListViewController.m */; };
+		01D9CEC21A90693900147173 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01D9CEC11A90693900147173 /* InfoPlist.strings */; };
+		01D9CEC81A90782800147173 /* LSLocationExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CEC71A90782800147173 /* LSLocationExporter.m */; };
+		01D9CECB1A90869B00147173 /* LSLocationListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CECA1A90869B00147173 /* LSLocationListDetailViewController.m */; };
+		01D9CECD1A9088A800147173 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D9CECC1A9088A800147173 /* MapKit.framework */; };
+		01D9CED31A908E5D00147173 /* LSErrorListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CED21A908E5D00147173 /* LSErrorListViewController.m */; };
+		01D9CED61A9090F400147173 /* LSErrorListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CED51A9090F400147173 /* LSErrorListDetailViewController.m */; };
+		01D9CED91A90936E00147173 /* LSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CED81A90936E00147173 /* LSSettingsViewController.m */; };
+		01D9CEDC1A9097F700147173 /* LSSettingsAccuracyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CEDB1A9097F700147173 /* LSSettingsAccuracyViewController.m */; };
+		01D9CEDF1A909DC000147173 /* LSSettingsDistanceFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D9CEDE1A909DC000147173 /* LSSettingsDistanceFilterViewController.m */; };
+		0650D01BEB8190EBD765C640 /* libPods-LocationTrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C864A286405FAD191D3D56A /* libPods-LocationTrackerTests.a */; };
+		D25CE3F94AF8E2469379BBCF /* libPods-LocationTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2284BA8EEE06EA4D890083 /* libPods-LocationTracker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +56,38 @@
 		01D74E6B1A9055F9007D471D /* LocationTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationTrackerTests.m; sourceTree = "<group>"; };
 		01D74E791A9056D7007D471D /* LSMainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSMainTabBarController.h; path = ViewComponents/MainTabBar/LSMainTabBarController.h; sourceTree = "<group>"; };
 		01D74E7A1A9056D7007D471D /* LSMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSMainTabBarController.m; path = ViewComponents/MainTabBar/LSMainTabBarController.m; sourceTree = "<group>"; };
+		01D74E7E1A90582D007D471D /* LSLocationListStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LSLocationListStoryboard.storyboard; path = ViewComponents/LocationList/LSLocationListStoryboard.storyboard; sourceTree = "<group>"; };
+		01D74E801A905844007D471D /* LSSettingsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LSSettingsStoryboard.storyboard; path = ViewComponents/Settings/LSSettingsStoryboard.storyboard; sourceTree = "<group>"; };
+		01D74E821A905981007D471D /* GVUserDefaults+LSProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GVUserDefaults+LSProperties.h"; path = "Utilities/GVUserDefaults+LSProperties.h"; sourceTree = "<group>"; };
+		01D74E831A905981007D471D /* GVUserDefaults+LSProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GVUserDefaults+LSProperties.m"; path = "Utilities/GVUserDefaults+LSProperties.m"; sourceTree = "<group>"; };
+		01D74E851A905B91007D471D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		01D74E871A905C19007D471D /* LSLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSLocationManager.h; path = Managers/LSLocationManager.h; sourceTree = "<group>"; };
+		01D74E881A905C19007D471D /* LSLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSLocationManager.m; path = Managers/LSLocationManager.m; sourceTree = "<group>"; };
+		01D9CEBB1A90629200147173 /* LSErrorListStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LSErrorListStoryboard.storyboard; path = ViewComponents/ErrorList/LSErrorListStoryboard.storyboard; sourceTree = "<group>"; };
+		01D9CEBD1A90636E00147173 /* LSLocationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSLocationListViewController.h; path = ViewComponents/LocationList/LSLocationListViewController.h; sourceTree = "<group>"; };
+		01D9CEBE1A90636E00147173 /* LSLocationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSLocationListViewController.m; path = ViewComponents/LocationList/LSLocationListViewController.m; sourceTree = "<group>"; };
+		01D9CEC11A90693900147173 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = Locales/InfoPlist.strings; sourceTree = "<group>"; };
+		01D9CEC61A90782800147173 /* LSLocationExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSLocationExporter.h; path = Utilities/LSLocationExporter.h; sourceTree = "<group>"; };
+		01D9CEC71A90782800147173 /* LSLocationExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSLocationExporter.m; path = Utilities/LSLocationExporter.m; sourceTree = "<group>"; };
+		01D9CEC91A90869B00147173 /* LSLocationListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSLocationListDetailViewController.h; path = ViewComponents/LocationList/LSLocationListDetailViewController.h; sourceTree = "<group>"; };
+		01D9CECA1A90869B00147173 /* LSLocationListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSLocationListDetailViewController.m; path = ViewComponents/LocationList/LSLocationListDetailViewController.m; sourceTree = "<group>"; };
+		01D9CECC1A9088A800147173 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		01D9CED11A908E5D00147173 /* LSErrorListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSErrorListViewController.h; path = ViewComponents/ErrorList/LSErrorListViewController.h; sourceTree = "<group>"; };
+		01D9CED21A908E5D00147173 /* LSErrorListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSErrorListViewController.m; path = ViewComponents/ErrorList/LSErrorListViewController.m; sourceTree = "<group>"; };
+		01D9CED41A9090F400147173 /* LSErrorListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSErrorListDetailViewController.h; path = ViewComponents/ErrorList/LSErrorListDetailViewController.h; sourceTree = "<group>"; };
+		01D9CED51A9090F400147173 /* LSErrorListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSErrorListDetailViewController.m; path = ViewComponents/ErrorList/LSErrorListDetailViewController.m; sourceTree = "<group>"; };
+		01D9CED71A90936E00147173 /* LSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSSettingsViewController.h; path = ViewComponents/Settings/LSSettingsViewController.h; sourceTree = "<group>"; };
+		01D9CED81A90936E00147173 /* LSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSSettingsViewController.m; path = ViewComponents/Settings/LSSettingsViewController.m; sourceTree = "<group>"; };
+		01D9CEDA1A9097F700147173 /* LSSettingsAccuracyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSSettingsAccuracyViewController.h; path = ViewComponents/Settings/LSSettingsAccuracyViewController.h; sourceTree = "<group>"; };
+		01D9CEDB1A9097F700147173 /* LSSettingsAccuracyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSSettingsAccuracyViewController.m; path = ViewComponents/Settings/LSSettingsAccuracyViewController.m; sourceTree = "<group>"; };
+		01D9CEDD1A909DC000147173 /* LSSettingsDistanceFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSSettingsDistanceFilterViewController.h; path = ViewComponents/Settings/LSSettingsDistanceFilterViewController.h; sourceTree = "<group>"; };
+		01D9CEDE1A909DC000147173 /* LSSettingsDistanceFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSSettingsDistanceFilterViewController.m; path = ViewComponents/Settings/LSSettingsDistanceFilterViewController.m; sourceTree = "<group>"; };
+		1C32D9AACC1CE6E2287EFE68 /* Pods-LocationTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTrackerTests/Pods-LocationTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7C2284BA8EEE06EA4D890083 /* libPods-LocationTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C864A286405FAD191D3D56A /* libPods-LocationTrackerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationTrackerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E3C1C808F4D842E1910CC9A /* Pods-LocationTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTracker/Pods-LocationTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		AD00CBD8AE5500981C782FA4 /* Pods-LocationTrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTrackerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTrackerTests/Pods-LocationTrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		C78EE8660C8BB0E781113C6C /* Pods-LocationTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTracker/Pods-LocationTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +95,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D9CECD1A9088A800147173 /* MapKit.framework in Frameworks */,
+				01D74E861A905B91007D471D /* CoreLocation.framework in Frameworks */,
+				D25CE3F94AF8E2469379BBCF /* libPods-LocationTracker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0650D01BEB8190EBD765C640 /* libPods-LocationTrackerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +118,8 @@
 				01D74E4B1A9055F9007D471D /* LocationTracker */,
 				01D74E681A9055F9007D471D /* LocationTrackerTests */,
 				01D74E4A1A9055F9007D471D /* Products */,
+				77A133644CC9CD03DD294C7B /* Pods */,
+				79AB08DB7B5640BF9B1786CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +135,8 @@
 		01D74E4B1A9055F9007D471D /* LocationTracker */ = {
 			isa = PBXGroup;
 			children = (
+				01D74E7D1A90580A007D471D /* Managers */,
+				01D74E7C1A905800007D471D /* Utilities */,
 				01D74E751A905606007D471D /* ViewComponents */,
 				01D74E501A9055F9007D471D /* AppDelegate.h */,
 				01D74E511A9055F9007D471D /* AppDelegate.m */,
@@ -92,6 +150,7 @@
 		01D74E4C1A9055F9007D471D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				01D9CEC01A90692000147173 /* Locales */,
 				01D74E4D1A9055F9007D471D /* Info.plist */,
 				01D74E4E1A9055F9007D471D /* main.m */,
 			);
@@ -119,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				01D74E781A90567B007D471D /* LocationList */,
+				01D9CEBA1A90627000147173 /* ErrorList */,
 				01D74E771A905676007D471D /* Settings */,
 				01D74E761A90566B007D471D /* MainTabBar */,
 			);
@@ -137,6 +197,13 @@
 		01D74E771A905676007D471D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				01D74E801A905844007D471D /* LSSettingsStoryboard.storyboard */,
+				01D9CED71A90936E00147173 /* LSSettingsViewController.h */,
+				01D9CED81A90936E00147173 /* LSSettingsViewController.m */,
+				01D9CEDA1A9097F700147173 /* LSSettingsAccuracyViewController.h */,
+				01D9CEDB1A9097F700147173 /* LSSettingsAccuracyViewController.m */,
+				01D9CEDD1A909DC000147173 /* LSSettingsDistanceFilterViewController.h */,
+				01D9CEDE1A909DC000147173 /* LSSettingsDistanceFilterViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -144,8 +211,75 @@
 		01D74E781A90567B007D471D /* LocationList */ = {
 			isa = PBXGroup;
 			children = (
+				01D74E7E1A90582D007D471D /* LSLocationListStoryboard.storyboard */,
+				01D9CEBD1A90636E00147173 /* LSLocationListViewController.h */,
+				01D9CEBE1A90636E00147173 /* LSLocationListViewController.m */,
+				01D9CEC91A90869B00147173 /* LSLocationListDetailViewController.h */,
+				01D9CECA1A90869B00147173 /* LSLocationListDetailViewController.m */,
 			);
 			name = LocationList;
+			sourceTree = "<group>";
+		};
+		01D74E7C1A905800007D471D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				01D74E821A905981007D471D /* GVUserDefaults+LSProperties.h */,
+				01D74E831A905981007D471D /* GVUserDefaults+LSProperties.m */,
+				01D9CEC61A90782800147173 /* LSLocationExporter.h */,
+				01D9CEC71A90782800147173 /* LSLocationExporter.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		01D74E7D1A90580A007D471D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				01D74E871A905C19007D471D /* LSLocationManager.h */,
+				01D74E881A905C19007D471D /* LSLocationManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		01D9CEBA1A90627000147173 /* ErrorList */ = {
+			isa = PBXGroup;
+			children = (
+				01D9CEBB1A90629200147173 /* LSErrorListStoryboard.storyboard */,
+				01D9CED11A908E5D00147173 /* LSErrorListViewController.h */,
+				01D9CED21A908E5D00147173 /* LSErrorListViewController.m */,
+				01D9CED41A9090F400147173 /* LSErrorListDetailViewController.h */,
+				01D9CED51A9090F400147173 /* LSErrorListDetailViewController.m */,
+			);
+			name = ErrorList;
+			sourceTree = "<group>";
+		};
+		01D9CEC01A90692000147173 /* Locales */ = {
+			isa = PBXGroup;
+			children = (
+				01D9CEC11A90693900147173 /* InfoPlist.strings */,
+			);
+			name = Locales;
+			sourceTree = "<group>";
+		};
+		77A133644CC9CD03DD294C7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E3C1C808F4D842E1910CC9A /* Pods-LocationTracker.debug.xcconfig */,
+				C78EE8660C8BB0E781113C6C /* Pods-LocationTracker.release.xcconfig */,
+				1C32D9AACC1CE6E2287EFE68 /* Pods-LocationTrackerTests.debug.xcconfig */,
+				AD00CBD8AE5500981C782FA4 /* Pods-LocationTrackerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		79AB08DB7B5640BF9B1786CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01D9CECC1A9088A800147173 /* MapKit.framework */,
+				01D74E851A905B91007D471D /* CoreLocation.framework */,
+				7C2284BA8EEE06EA4D890083 /* libPods-LocationTracker.a */,
+				9C864A286405FAD191D3D56A /* libPods-LocationTrackerTests.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +289,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01D74E6F1A9055F9007D471D /* Build configuration list for PBXNativeTarget "LocationTracker" */;
 			buildPhases = (
+				5E7994AB742636E4A651FB51 /* Check Pods Manifest.lock */,
 				01D74E451A9055F9007D471D /* Sources */,
 				01D74E461A9055F9007D471D /* Frameworks */,
 				01D74E471A9055F9007D471D /* Resources */,
+				7FF00300ADEB307D58054F86 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,9 +308,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01D74E721A9055F9007D471D /* Build configuration list for PBXNativeTarget "LocationTrackerTests" */;
 			buildPhases = (
+				DD6C4955EB7BA99AF572B5FA /* Check Pods Manifest.lock */,
 				01D74E611A9055F9007D471D /* Sources */,
 				01D74E621A9055F9007D471D /* Frameworks */,
 				01D74E631A9055F9007D471D /* Resources */,
+				6DEC7719C63DFA0E81A9D00E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,6 +335,11 @@
 				TargetAttributes = {
 					01D74E481A9055F9007D471D = {
 						CreatedOnToolsVersion = 6.1.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					01D74E641A9055F9007D471D = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -228,8 +371,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D74E7F1A90582D007D471D /* LSLocationListStoryboard.storyboard in Resources */,
+				01D9CEC21A90693900147173 /* InfoPlist.strings in Resources */,
 				01D74E601A9055F9007D471D /* LaunchScreen.xib in Resources */,
+				01D9CEBC1A90629200147173 /* LSErrorListStoryboard.storyboard in Resources */,
 				01D74E5D1A9055F9007D471D /* Images.xcassets in Resources */,
+				01D74E811A905844007D471D /* LSSettingsStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,14 +389,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5E7994AB742636E4A651FB51 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6DEC7719C63DFA0E81A9D00E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocationTrackerTests/Pods-LocationTrackerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FF00300ADEB307D58054F86 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocationTracker/Pods-LocationTracker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD6C4955EB7BA99AF572B5FA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		01D74E451A9055F9007D471D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D9CEBF1A90636E00147173 /* LSLocationListViewController.m in Sources */,
+				01D9CED91A90936E00147173 /* LSSettingsViewController.m in Sources */,
+				01D9CED31A908E5D00147173 /* LSErrorListViewController.m in Sources */,
+				01D9CEDF1A909DC000147173 /* LSSettingsDistanceFilterViewController.m in Sources */,
+				01D9CEDC1A9097F700147173 /* LSSettingsAccuracyViewController.m in Sources */,
 				01D74E521A9055F9007D471D /* AppDelegate.m in Sources */,
+				01D9CED61A9090F400147173 /* LSErrorListDetailViewController.m in Sources */,
+				01D9CEC81A90782800147173 /* LSLocationExporter.m in Sources */,
 				01D74E4F1A9055F9007D471D /* main.m in Sources */,
+				01D74E891A905C19007D471D /* LSLocationManager.m in Sources */,
+				01D9CECB1A90869B00147173 /* LSLocationListDetailViewController.m in Sources */,
 				01D74E7B1A9056D7007D471D /* LSMainTabBarController.m in Sources */,
+				01D74E841A905981007D471D /* GVUserDefaults+LSProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +581,7 @@
 		};
 		01D74E701A9055F9007D471D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E3C1C808F4D842E1910CC9A /* Pods-LocationTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LocationTracker/Info.plist;
@@ -371,6 +592,7 @@
 		};
 		01D74E711A9055F9007D471D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C78EE8660C8BB0E781113C6C /* Pods-LocationTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LocationTracker/Info.plist;
@@ -381,6 +603,7 @@
 		};
 		01D74E731A9055F9007D471D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C32D9AACC1CE6E2287EFE68 /* Pods-LocationTrackerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -400,6 +623,7 @@
 		};
 		01D74E741A9055F9007D471D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD00CBD8AE5500981C782FA4 /* Pods-LocationTrackerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -432,6 +656,7 @@
 				01D74E711A9055F9007D471D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01D74E721A9055F9007D471D /* Build configuration list for PBXNativeTarget "LocationTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +665,7 @@
 				01D74E741A9055F9007D471D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

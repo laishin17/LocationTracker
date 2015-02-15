@@ -1,5 +1,5 @@
 //
-//  LSMainTabBarController.h
+//  LSSettingsDistanceFilterViewController.h
 //  LocationTracker
 //
 //  Created by laishin on 2015/02/15.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface LSMainTabBarController : UITabBarController
-
-+ (instancetype)tabBarController;
+@interface LSSettingsDistanceFilterViewController : UITableViewController
 
 @end
