@@ -20,6 +20,7 @@ static const CGFloat kDefaultCellHeight = 44.0;
 @interface LSLocationListViewController ()
 
 @property (nonatomic) NSArray *locations;
+@property (nonatomic) NSDateFormatter *dateFormatter;
 
 @end
 
@@ -31,6 +32,9 @@ static const CGFloat kDefaultCellHeight = 44.0;
     [super viewDidLoad];
     
     self.clearsSelectionOnViewWillAppear = NO;
+    
+    self.navigationItem.title = @"位置履歴";
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -76,6 +80,16 @@ static const CGFloat kDefaultCellHeight = 44.0;
 }
 
 #pragma mark - Accessors
+
+- (NSDateFormatter *)dateFormatter
+{
+    if (_dateFormatter == nil) {
+        _dateFormatter = [NSDateFormatter new];
+        _dateFormatter.dateFormat = @"M/dd H:mm:ss";
+    }
+    return _dateFormatter;
+}
+
 #pragma mark - Publics
 #pragma mark - Privates
 #pragma mark - Delegates
@@ -103,8 +117,12 @@ static const CGFloat kDefaultCellHeight = 44.0;
     NSInteger index = self.locations.count - indexPath.row - 1;
     NSData *locationData = self.locations[index];
     CLLocation *location = [NSKeyedUnarchiver unarchiveObjectWithData:locationData];
-    cell.textLabel.text = location.timestamp.description;
-    cell.detailTextLabel.text = location.description;
+    
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.5f, %.5f, %.2f",
+                                 location.coordinate.latitude,
+                                 location.coordinate.longitude,
+                                 location.horizontalAccuracy];
+    cell.textLabel.text = [self.dateFormatter stringFromDate:location.timestamp];
     
     return cell;
 }
