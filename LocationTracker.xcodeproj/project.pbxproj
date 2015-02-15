@@ -15,6 +15,7 @@
 		01D74E7B1A9056D7007D471D /* LSMainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D74E7A1A9056D7007D471D /* LSMainTabBarController.m */; };
 		01D74E7F1A90582D007D471D /* LSLocationListStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D74E7E1A90582D007D471D /* LSLocationListStoryboard.storyboard */; };
 		01D74E811A905844007D471D /* LSSettingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D74E801A905844007D471D /* LSSettingsStoryboard.storyboard */; };
+		01D74E841A905981007D471D /* GVUserDefaults+LSProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D74E831A905981007D471D /* GVUserDefaults+LSProperties.m */; };
 		0650D01BEB8190EBD765C640 /* libPods-LocationTrackerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C864A286405FAD191D3D56A /* libPods-LocationTrackerTests.a */; };
 		D25CE3F94AF8E2469379BBCF /* libPods-LocationTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C2284BA8EEE06EA4D890083 /* libPods-LocationTracker.a */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,8 @@
 		01D74E7A1A9056D7007D471D /* LSMainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSMainTabBarController.m; path = ViewComponents/MainTabBar/LSMainTabBarController.m; sourceTree = "<group>"; };
 		01D74E7E1A90582D007D471D /* LSLocationListStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LSLocationListStoryboard.storyboard; path = ViewComponents/LocationList/LSLocationListStoryboard.storyboard; sourceTree = "<group>"; };
 		01D74E801A905844007D471D /* LSSettingsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LSSettingsStoryboard.storyboard; path = ViewComponents/Settings/LSSettingsStoryboard.storyboard; sourceTree = "<group>"; };
+		01D74E821A905981007D471D /* GVUserDefaults+LSProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GVUserDefaults+LSProperties.h"; path = "Utilities/GVUserDefaults+LSProperties.h"; sourceTree = "<group>"; };
+		01D74E831A905981007D471D /* GVUserDefaults+LSProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GVUserDefaults+LSProperties.m"; path = "Utilities/GVUserDefaults+LSProperties.m"; sourceTree = "<group>"; };
 		1C32D9AACC1CE6E2287EFE68 /* Pods-LocationTrackerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocationTrackerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocationTrackerTests/Pods-LocationTrackerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7C2284BA8EEE06EA4D890083 /* libPods-LocationTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C864A286405FAD191D3D56A /* libPods-LocationTrackerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocationTrackerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +174,8 @@
 		01D74E7C1A905800007D471D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				01D74E821A905981007D471D /* GVUserDefaults+LSProperties.h */,
+				01D74E831A905981007D471D /* GVUserDefaults+LSProperties.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 				01D74E521A9055F9007D471D /* AppDelegate.m in Sources */,
 				01D74E4F1A9055F9007D471D /* main.m in Sources */,
 				01D74E7B1A9056D7007D471D /* LSMainTabBarController.m in Sources */,
+				01D74E841A905981007D471D /* GVUserDefaults+LSProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
