@@ -36,7 +36,7 @@ static const CGFloat kDefaultCellHeight = 44.0;
 {
     [super viewDidLoad];
     
-    self.clearsSelectionOnViewWillAppear = NO;
+    self.clearsSelectionOnViewWillAppear = YES;
     
     self.navigationItem.title = @"位置履歴";
     
