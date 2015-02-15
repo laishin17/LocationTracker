@@ -19,17 +19,19 @@
 {
     LSMainTabBarController *vc = [self new];
     
-    UIStoryboard *listSB = [UIStoryboard storyboardWithName:@"LSLocationListStoryboard"
-                                                     bundle:nil];
-    UIViewController *listVC = [listSB instantiateInitialViewController];
-    listVC.tabBarItem.title = @"位置履歴";
+    UIStoryboard *locationsSB = [UIStoryboard storyboardWithName:@"LSLocationListStoryboard" bundle:nil];
+    UIViewController *locationsVC = [locationsSB instantiateInitialViewController];
+    locationsVC.tabBarItem.title = @"位置履歴";
     
-    UIStoryboard *settingsSB = [UIStoryboard storyboardWithName:@"LSSettingsStoryboard"
-                                                         bundle:nil];
+    UIStoryboard *errorsSB = [UIStoryboard storyboardWithName:@"LSErrorListStoryboard" bundle:nil];
+    UIViewController *errorsVC = [errorsSB instantiateInitialViewController];
+    errorsVC.tabBarItem.title = @"エラー";
+    
+    UIStoryboard *settingsSB = [UIStoryboard storyboardWithName:@"LSSettingsStoryboard" bundle:nil];
     UIViewController *settingsVC = [settingsSB instantiateInitialViewController];
     settingsVC.tabBarItem.title = @"設定";
     
-    vc.viewControllers = @[listVC, settingsVC];
+    vc.viewControllers = @[locationsVC, errorsVC, settingsVC];
     
     return vc;
 }
